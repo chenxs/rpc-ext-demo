@@ -1,9 +1,10 @@
-package cn.hill4j.rpcext.demo.dubbo.client.test;
+package cn.hill4j.rpcext.demo.dubbo.client.test.annotationtest;
 
-import cn.hill4j.rpcext.demo.dubbo.client.AnnotationBeanClientApplication;
-import cn.hill4j.rpcext.demo.dubbo.client.SayHelloClient;
+import cn.hill4j.rpcext.demo.dubbo.client.annotiontest.ClientApplication;
+import cn.hill4j.rpcext.demo.dubbo.client.annotiontest.AnnotationSayHelloClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
@@ -18,14 +19,14 @@ import javax.annotation.Resource;
  * @create 2019/8/29 10:43
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = AnnotationBeanClientApplication.class)
-public class SayHelloClient1Test {
-    @Resource
-    private SayHelloClient sayHelloClient;
+@SpringBootTest(classes = ClientApplication.class)
+public class SayHelloClientTest {
+    @Autowired
+    private AnnotationSayHelloClient annotationSayHelloClient;
 
     @Test
     public void sayHelloTest(){
-        String say = sayHelloClient.sayHello("hill chen");
+        String say = annotationSayHelloClient.sayHello("hill chen");
         Assert.hasLength(say,"need say something!");
         System.out.println(say);
 

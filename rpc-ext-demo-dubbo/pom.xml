@@ -25,7 +25,7 @@
         <dependency>
             <groupId>cn.hill4j.rpcext</groupId>
             <artifactId>rpc-ext-core</artifactId>
-            <version>1.0</version>
+            <version>1.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>

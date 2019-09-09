@@ -1,4 +1,4 @@
-package cn.hill4j.rpcext.demo.dubbo.client.test;
+package cn.hill4j.rpcext.demo.dubbo.client.test.spingext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,7 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
                 logger.error(beanName + "：has not create");
             }
 
-            logger.error("beanName:" + beanName +  ":TestInstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation");
+            logger.error("beanName:" + beanName +  ":TestInstantiationAwareBeanPostProcessor.实例化前置操作");
         }
         return null;
     }
@@ -42,7 +42,7 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (bean instanceof TestBean || bean instanceof TestBean2 ) {
             applicationContext.getBean(beanName);
-            logger.error("beanName:" + beanName  +  ":TestInstantiationAwareBeanPostProcessor.postProcessAfterInstantiation");
+            logger.error("beanName:" + beanName  +  ":TestInstantiationAwareBeanPostProcessor.实例化后置操作");
         }
         return true;
     }
@@ -50,7 +50,7 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
     @Override
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
         if (bean instanceof TestBean || bean instanceof TestBean2) {
-            logger.error("beanName:" + beanName +  ":TestInstantiationAwareBeanPostProcessor.postProcessPropertyValues");
+            logger.error("beanName:" + beanName +  ":TestInstantiationAwareBeanPostProcessor.bean实例化后属性设值操作");
         }
         return pvs;
     }
@@ -59,7 +59,7 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof TestBean || bean instanceof TestBean2) {
             applicationContext.getBean(beanName);
-            logger.error("beanName:" + beanName + ":TestInstantiationAwareBeanPostProcessor.postProcessBeforeInitialization");
+            logger.error("beanName:" + beanName + ":TestInstantiationAwareBeanPostProcessor.bean初始化前置操作");
         }
         return bean;
     }
@@ -67,7 +67,7 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof TestBean ) {
-            logger.error("beanName:" + beanName +  ":TestInstantiationAwareBeanPostProcessor.postProcessAfterInitialization");
+            logger.error("beanName:" + beanName +  ":TestInstantiationAwareBeanPostProcessor.bean初始化后置操作");
         }
         return bean;
     }
@@ -75,5 +75,6 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+        logger.error("TestInstantiationAwareBeanPostProcessor.setApplicationContext");
     }
 }

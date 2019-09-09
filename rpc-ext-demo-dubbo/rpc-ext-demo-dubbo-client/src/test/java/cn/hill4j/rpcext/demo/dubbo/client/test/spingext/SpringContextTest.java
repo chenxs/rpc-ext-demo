@@ -1,10 +1,8 @@
-package cn.hill4j.rpcext.demo.dubbo.client.test;
+package cn.hill4j.rpcext.demo.dubbo.client.test.spingext;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.util.ApplicationContextTestUtils;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;

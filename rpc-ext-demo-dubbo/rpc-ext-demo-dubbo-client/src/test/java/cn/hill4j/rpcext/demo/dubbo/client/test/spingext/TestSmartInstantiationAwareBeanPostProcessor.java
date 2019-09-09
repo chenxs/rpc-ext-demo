@@ -1,4 +1,4 @@
-package cn.hill4j.rpcext.demo.dubbo.client.test;
+package cn.hill4j.rpcext.demo.dubbo.client.test.spingext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

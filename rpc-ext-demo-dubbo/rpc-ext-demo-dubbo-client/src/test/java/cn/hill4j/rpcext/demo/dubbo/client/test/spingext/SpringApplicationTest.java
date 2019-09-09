@@ -1,10 +1,8 @@
-package cn.hill4j.rpcext.demo.dubbo.client.test;
+package cn.hill4j.rpcext.demo.dubbo.client.test.spingext;
 
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.WebApplicationType;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 
@@ -15,8 +13,8 @@ import org.springframework.context.annotation.Bean;
  * @author hillchen
  * @create 2019/8/28 19:23
  */
-@SpringBootApplication
-@EnableDubbo
+// @SpringBootApplication
+// @EnableDubbo
 public class SpringApplicationTest {
     private Logger logger = LoggerFactory.getLogger(SpringApplicationTest.class);
 

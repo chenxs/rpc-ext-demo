@@ -1,21 +1,22 @@
-package cn.hill4j.rpcext.demo.dubbo.client;
+package cn.hill4j.rpcext.demo.dubbo.client.annotiontest;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
- * 2019/8/28 19:23 <br>
+ * 2019/8/28 19:23<br>
  * Description: SerApplication
  *
  * @author hillchen
  */
 @SpringBootApplication
-@ImportResource({ "classpath:/dubboConfig.xml"})
-public class AnnotationBeanClientApplication {
+@EnableDubbo
+public class ClientApplication{
     public static void main(String[] args) {
-        new SpringApplicationBuilder(AnnotationBeanClientApplication.class)
+        new SpringApplicationBuilder(ClientApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
     }

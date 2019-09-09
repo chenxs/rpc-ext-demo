@@ -1,7 +1,7 @@
-package cn.hill4j.rpcext.demo.dubbo.client.test;
+package cn.hill4j.rpcext.demo.dubbo.client.test.anbeantest;
 
-import cn.hill4j.rpcext.demo.dubbo.client.SayHelloClient;
-import cn.hill4j.rpcext.demo.dubbo.client.XmlClientApplication;
+import cn.hill4j.rpcext.demo.dubbo.client.anbeantest.AnnotationBeanClientApplication;
+import cn.hill4j.rpcext.demo.dubbo.client.anbeantest.AnBeanSayHelloClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,14 +18,14 @@ import javax.annotation.Resource;
  * @create 2019/8/29 10:43
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = XmlClientApplication.class)
-public class SayHelloClient2Test {
+@SpringBootTest(classes = AnnotationBeanClientApplication.class)
+public class SayHelloClient1Test {
     @Resource
-    private SayHelloClient sayHelloClient;
+    private AnBeanSayHelloClient anBeanSayHelloClient;
 
     @Test
     public void sayHelloTest(){
-        String say = sayHelloClient.sayHello("hill chen");
+        String say = anBeanSayHelloClient.sayHello("hill chen");
         Assert.hasLength(say,"need say something!");
         System.out.println(say);
 

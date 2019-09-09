@@ -1,8 +1,9 @@
-package cn.hill4j.rpcext.demo.dubbo.client;
+package cn.hill4j.rpcext.demo.dubbo.client.xmltest;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import cn.hill4j.rpcext.demo.dubbo.api.SayHello;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * 2019/8/28 19:34 <br>
@@ -10,9 +11,9 @@ import org.springframework.stereotype.Component;
  *
  * @author hillchen
  */
-@Component
+@Component("sayHelloClient")
 public class SayHelloClient {
-    @Reference
+    @Resource
     private SayHello sayHello;
 
     /**
