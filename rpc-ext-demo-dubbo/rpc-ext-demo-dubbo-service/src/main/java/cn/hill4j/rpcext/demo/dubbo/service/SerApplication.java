@@ -1,5 +1,6 @@
 package cn.hill4j.rpcext.demo.dubbo.service;
 
+import cn.hill4j.rpcext.core.rpcext.unity.dubbo.annotation.EnableRpcProvider;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,6 +16,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  */
 @SpringBootApplication
 @EnableDubbo
+@EnableRpcProvider
 public class SerApplication implements ApplicationRunner {
     public static void main(String[] args) {
         new SpringApplicationBuilder(SerApplication.class)

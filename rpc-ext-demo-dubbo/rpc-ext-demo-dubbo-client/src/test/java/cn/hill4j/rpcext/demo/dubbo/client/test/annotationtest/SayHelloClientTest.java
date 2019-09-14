@@ -1,5 +1,6 @@
 package cn.hill4j.rpcext.demo.dubbo.client.test.annotationtest;
 
+import cn.hill4j.rpcext.demo.dubbo.client.annotiontest.AnnotationSayWhyClient;
 import cn.hill4j.rpcext.demo.dubbo.client.annotiontest.ClientApplication;
 import cn.hill4j.rpcext.demo.dubbo.client.annotiontest.AnnotationSayHelloClient;
 import org.junit.Test;
@@ -23,12 +24,18 @@ import javax.annotation.Resource;
 public class SayHelloClientTest {
     @Autowired
     private AnnotationSayHelloClient annotationSayHelloClient;
+    @Autowired
+    private AnnotationSayWhyClient annotationSayWhyClient;
 
     @Test
     public void sayHelloTest(){
         String say = annotationSayHelloClient.sayHello("hill chen");
         Assert.hasLength(say,"need say something!");
         System.out.println(say);
+
+        String sayWhy = annotationSayWhyClient.sayWhy("hill chen");
+        Assert.hasLength(sayWhy,"need say something!");
+        System.out.println(sayWhy);
 
     }
 }
