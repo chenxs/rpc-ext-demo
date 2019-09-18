@@ -1,5 +1,6 @@
 package cn.hill4j.rpcext.demo.dubbo.client.anbeantest;
 
+import cn.hill4j.rpcext.core.rpcext.unity.dubbo.annotation.EnableRpcReferences;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @SpringBootApplication
 @ImportResource({ "classpath:/dubboConfig.xml"})
+@EnableRpcReferences(orgBasePackages = {"cn.hill4j.rpcext.demo.dubbo"},referenceAppNames = {"api-test"})
 public class AnnotationBeanClientApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(AnnotationBeanClientApplication.class)

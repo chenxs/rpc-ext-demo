@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
  *
  * @author hillchen
  */
-@Component("annotationSayWhyClient")
 public class AnnotationSayWhyClient {
     @Reference
     private SayWhy sayWhy;

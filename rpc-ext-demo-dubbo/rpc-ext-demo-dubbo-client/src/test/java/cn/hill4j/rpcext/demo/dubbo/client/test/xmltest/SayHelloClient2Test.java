@@ -1,5 +1,6 @@
 package cn.hill4j.rpcext.demo.dubbo.client.test.xmltest;
 
+import cn.hill4j.rpcext.demo.dubbo.api.other.SayWhat;
 import cn.hill4j.rpcext.demo.dubbo.client.xmltest.SayHelloClient;
 import cn.hill4j.rpcext.demo.dubbo.client.xmltest.XmlClientApplication;
 import org.junit.Test;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
+
+import javax.annotation.Resource;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -21,6 +24,8 @@ import org.springframework.util.Assert;
 public class SayHelloClient2Test {
     @Autowired
     private SayHelloClient sayHelloClient;
+    @Resource
+    private SayWhat sayWhat;
 
     @Test
     public void sayHelloTest(){
@@ -28,5 +33,6 @@ public class SayHelloClient2Test {
         Assert.hasLength(say,"need say something!");
         System.out.println(say);
 
+        System.out.println(sayWhat.sayWhat());
     }
 }

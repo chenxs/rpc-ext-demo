@@ -3,18 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>rpc-ext</artifactId>
+        <artifactId>rpc-ext-demo</artifactId>
         <groupId>cn.hill4j.rpcext</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>rpc-ext-demo</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>rpc-ext-demo-dubbo</module>
-        <module>rpc-ext-demo-unity-dubbo</module>
+        <module>rpc-ext-demo-unity-dubbo-api</module>
+        <module>rpc-ext-demo-unity-dubbo-service</module>
+        <module>rpc-ext-demo-unity-dubbo-client</module>
     </modules>
+
+    <artifactId>rpc-ext-demo-unity-dubbo</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hill4j.rpcext</groupId>
+            <artifactId>rpc-ext-core</artifactId>
+            <version>1.2-SNAPSHOTS</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <pluginManagement>
@@ -83,4 +96,5 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+
 </project>

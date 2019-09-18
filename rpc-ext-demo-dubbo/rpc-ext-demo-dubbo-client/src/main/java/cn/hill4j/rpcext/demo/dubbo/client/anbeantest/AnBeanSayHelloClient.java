@@ -2,6 +2,7 @@ package cn.hill4j.rpcext.demo.dubbo.client.anbeantest;
 
 import cn.hill4j.rpcext.demo.dubbo.api.SayHello;
 import com.alibaba.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("anBeanSayHelloClient")
 public class AnBeanSayHelloClient {
-    @Reference
+    @Autowired
     private SayHello sayHello;
 
     /**

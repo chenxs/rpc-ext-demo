@@ -1,8 +1,12 @@
 package cn.hill4j.rpcext.demo.dubbo.client.annotiontest;
 
 import cn.hill4j.rpcext.demo.dubbo.api.SayHello;
+import cn.hill4j.rpcext.demo.dubbo.api.other.SayWhat;
 import com.alibaba.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -22,6 +26,6 @@ public class AnnotationSayHelloClient {
      * @return 返回测试内容
      */
     public String sayHello(String name){
-        return sayHello.sayHello() + ", " + name;
+        return sayHello.sayHello() + ", " + name ;
     }
 }
