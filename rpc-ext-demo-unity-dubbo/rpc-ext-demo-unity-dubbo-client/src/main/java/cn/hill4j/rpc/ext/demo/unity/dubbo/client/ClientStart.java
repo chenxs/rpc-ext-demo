@@ -1,7 +1,6 @@
 package cn.hill4j.rpc.ext.demo.unity.dubbo.client;
 
 import cn.hill4j.rpcext.core.rpcext.unity.dubbo.annotation.EnableRpcReferences;
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,8 +12,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @author hillchen
  */
 @SpringBootApplication
-@EnableDubbo
-@EnableRpcReferences(orgBasePackages = {"cn.hill4j.rpc.ext.demo.unity.dubbo"},referenceAppNames = "demo-unity-dubbo")
+@EnableRpcReferences(basePackages = "cn.hill4j.rpc.ext.demo.unity.dubbo")
 public class ClientStart {
     public static void main(String[] args) {
         new SpringApplicationBuilder(ClientStart.class)

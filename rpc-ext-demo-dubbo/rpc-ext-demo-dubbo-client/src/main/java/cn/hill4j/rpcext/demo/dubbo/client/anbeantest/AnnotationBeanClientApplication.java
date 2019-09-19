@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @SpringBootApplication
 @ImportResource({ "classpath:/dubboConfig.xml"})
-@EnableRpcReferences(orgBasePackages = {"cn.hill4j.rpcext.demo.dubbo"},referenceAppNames = {"api-test"})
+@EnableRpcReferences(basePackages = {"cn.hill4j.rpcext.demo.dubbo"},referenceAppNames = {"api-test"})
 public class AnnotationBeanClientApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(AnnotationBeanClientApplication.class)

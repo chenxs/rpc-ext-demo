@@ -8,7 +8,7 @@ import cn.hill4j.rpcext.core.rpcext.dubbo.annotation.RpcApi;
  *
  * @author hillchen
  */
-@RpcApi
+@RpcApi(timeout = 1000,retries = 3)
 public interface SayDubboRpc {
     String say();
 }
