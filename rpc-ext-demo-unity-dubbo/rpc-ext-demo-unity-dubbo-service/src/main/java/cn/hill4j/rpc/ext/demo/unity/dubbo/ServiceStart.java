@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * 2019/9/18 23:13<br>
@@ -14,7 +15,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @author hillchen
  */
 @SpringBootApplication
-@EnableRpcProvider
+@EnableRpcProvider( "demo-unity-dubbo")
+@ImportResource("classpath:/dubboConfig.xml")
 public class ServiceStart implements ApplicationRunner {
     public static void main(String[] args) {
         new SpringApplicationBuilder(ServiceStart.class)
