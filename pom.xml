@@ -17,9 +17,9 @@
     </modules>
 
     <scm>
-        <url>https://github.com/chenxs/rpc-ext.git</url>
-        <connection>https://github.com/chenxs/rpc-ext.git</connection>
-        <developerConnection>https://github.com/chenxs/rpc-ext/blob/master/README.md</developerConnection>
+        <url>https://github.com/chenxs/rpc-ext-demo.git</url>
+        <connection>https://github.com/chenxs/rpc-ext-demo.git</connection>
+        <developerConnection>https://github.com/chenxs/rpc-ext-demo.git</developerConnection>
     </scm>
 
     <build>
