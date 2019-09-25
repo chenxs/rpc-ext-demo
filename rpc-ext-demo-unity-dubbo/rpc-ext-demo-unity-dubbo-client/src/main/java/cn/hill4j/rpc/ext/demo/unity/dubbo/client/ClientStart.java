@@ -4,6 +4,7 @@ import cn.hill4j.rpcext.core.rpcext.unity.dubbo.annotation.EnableRpcReferences;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * 2019/9/18 23:28<br>
