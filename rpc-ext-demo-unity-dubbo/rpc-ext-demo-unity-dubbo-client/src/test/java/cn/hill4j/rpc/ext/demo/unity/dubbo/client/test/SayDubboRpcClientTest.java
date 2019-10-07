@@ -27,4 +27,9 @@ public class SayDubboRpcClientTest {
         String say = sayDubboRpcClient.say();
         System.out.println(say);
     }
+    @Test
+    public void sayHelloTest(){
+        String say = sayDubboRpcClient.sayHello();
+        System.out.println(say);
+    }
 }

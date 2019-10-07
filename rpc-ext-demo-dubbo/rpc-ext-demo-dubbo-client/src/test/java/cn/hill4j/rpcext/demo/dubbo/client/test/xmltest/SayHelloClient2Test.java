@@ -24,15 +24,11 @@ import javax.annotation.Resource;
 public class SayHelloClient2Test {
     @Autowired
     private SayHelloClient sayHelloClient;
-    @Resource
-    private SayWhat sayWhat;
 
     @Test
     public void sayHelloTest(){
         String say = sayHelloClient.sayHello("hill chen");
         Assert.hasLength(say,"need say something!");
         System.out.println(say);
-
-        System.out.println(sayWhat.sayWhat());
     }
 }

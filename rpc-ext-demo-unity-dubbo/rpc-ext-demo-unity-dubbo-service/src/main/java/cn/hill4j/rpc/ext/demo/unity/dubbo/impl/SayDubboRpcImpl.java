@@ -1,5 +1,7 @@
 package cn.hill4j.rpc.ext.demo.unity.dubbo.impl;
 import cn.hill4j.rpc.ext.demo.unity.dubbo.api.SayDubboRpc;
+import cn.hill4j.rpc.ext.demo.unity.dubbo.api.SayHello;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,11 +10,17 @@ import org.springframework.stereotype.Component;
  *
  * @author hillchen
  */
-@Component
-public class SayDubboRpcImpl implements SayDubboRpc{
+@Component("sayDubboRpcImpl")
+@Service
+public class SayDubboRpcImpl implements SayDubboRpc, SayHello {
 
     @Override
     public String say() {
         return System.currentTimeMillis() + ":hello dubbo rpc";
+    }
+
+    @Override
+    public String sayHello() {
+        return System.currentTimeMillis() + ":hello";
     }
 }
